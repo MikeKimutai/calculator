@@ -1,8 +1,10 @@
 (function(){
-    let screen = document.querySelector('.screen');
+    let screen = document.getElementById('screen');
     let buttons = document.querySelectorAll('.btn');
-    let equal = document.querySelector('.btn-equal');
+    let equal = document.getElementById('btn-equal');
     let clear = document.querySelector('.btn-clear');
+    var answer = 0
+
 
     buttons.forEach(function(button){
         button.addEventListener('click',function(e){
@@ -16,8 +18,11 @@
             screen.value = "";
         }
         else{
-            let answer = eval(screen.value);
-            screen.value = answer;
+            console.log(screen.value)
+            answer = eval(screen.value);
+            console.log(screen.value)
+            console.log(answer)
+            screen.value += " = " + answer;
         }
     })
     clear.addEventListener('click', function(e){
